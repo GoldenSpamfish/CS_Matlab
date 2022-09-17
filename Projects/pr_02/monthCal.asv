@@ -1,18 +1,37 @@
-% prints a one-month calendar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% monthCal
+% Hanna Ceisler / Ryan Ellis
+%
+% Prints out a month's calendar
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%inputs
 days = input("Enter how many days in the month: ");
 dayofweek = input("Starting day-of-the-week (1=Mon, 7=Sun): ");
 
+% prints header
+fprintf("Su Mo Tu We Th Fr Sa\n")
 
-fprintf("Su Mo Tu We Th Fr Sa")
+% adds leading spaces for day offset
+if dayofweek ~= 7
+   for j = 1:rem(dayofweek,7)
+   fprintf("   ")
+   end
+end
+
+% adds days
 for i = 1:days
-    if dayofweek != 7
-        for j = 1:dayofweek;
-        fprintf("   ")
-        end
-    end
-    if rem(i,7) == 0
+
+    % newline control
+    if rem(i+dayofweek,7) == 1
         fprintf("\n")
     end
-    fprintf("%d",i)
     
+    if i<10
+        fprintf("%d  ",i)
+    else
+        fprintf("%d ",i)
+    end
 end
+fprintf("\n")
