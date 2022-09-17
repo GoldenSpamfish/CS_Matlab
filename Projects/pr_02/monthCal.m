@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 % prints a one-month calendar
 days = input("Enter how many days in the month: ");
 dayofweek = input("Starting day-of-the-week (1=Mon, 7=Sun): ");
@@ -20,3 +21,6 @@ for i = 1:days
     end
 end
 fprintf("\n")
+=======
+% ryan test
+>>>>>>> f12685e333fa22b72127c8f90ac3097cc454fcb0
