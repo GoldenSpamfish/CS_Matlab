@@ -1,0 +1,18 @@
+% prints a one-month calendar
+days = input("Enter how many days in the month: ");
+dayofweek = input("Starting day-of-the-week (1=Mon, 7=Sun): ");
+
+
+fprintf("Su Mo Tu We Th Fr Sa")
+for i = 1:days
+    if dayofweek != 7
+        for j = 1:dayofweek;
+        fprintf("   ")
+        end
+    end
+    if rem(i,7) == 0
+        fprintf("\n")
+    end
+    fprintf("%d",i)
+    
+end
