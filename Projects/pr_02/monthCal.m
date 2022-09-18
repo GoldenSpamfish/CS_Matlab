@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % monthCal
-% Hannah Ciesler / Ryan Ellis
+% Hannah Ceisler / Ryan Ellis
 %
 % Prints out a month's calendar
 %
