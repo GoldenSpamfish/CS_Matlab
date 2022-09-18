@@ -1,0 +1,33 @@
+% monthCal
+% Hannah Ceisler / Ryan Ellis
+%
+% Prints out a month's calendar
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+clearvars
+
+n = input("width of frame in squares: \n");
+dotrad= 1/12;
+
+% Set up the window
+close all         % Close all previous figure windows
+figure            % Start a new figure window
+hold on           % Keep the same set of axes (multiple plots on same axes)
+axis equal off       % unit lengths on x- and y-axis are equal
+
+DrawRect(0,0,n,n,"k")
+
+for x=1:n-1
+    DrawRect(x-dotrad,0,2*dotrad,n, "b")
+end
+for y=1:n-1
+    DrawRect(0,y-dotrad,n,2*dotrad, "b")
+end
+
+for x=1:n-1
+    for y=1:n-1
+       DrawDisk(x,y,dotrad,"w")
+    end
+end
+      
+
