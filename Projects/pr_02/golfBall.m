@@ -1,6 +1,7 @@
 % Script golfBall
 % Simulate the trajectory of a golf ball.  Units are meters and seconds.
 % The initial launch angle phi should be >0 and <=pi/2.
+% Edited by: Hannah Ciesler / Ryan Ellis
 
 % Set up figure window
 close all         % Close all previous figure windows
@@ -29,19 +30,47 @@ maxTime= 10;   % maximum duration of simulation allowed
 phi= pi/4;     % launch angle, >0 and <=pi/2
 v= 100;        % launch velocity
 
-
-
-% Dummy values set so that the script completes execution.  Remove the 
-% dummy values as you complete the code to calculate their actual values. 
-x= -1;
-y= -1;
-t= -1;
+ 
+% initialization
+x= 0;
+y= 0;
 ascendTime= -1;
-descendTime= -1;
+vx=v*cos(phi);
+vy=v*sin(phi);
+t=0;
+ymax=-1;
+
+% loop control, ends at maxtime or y<0
+while (t<maxTime && y>=0)
+    % enumeration
+    t=t+dt;
+
+    % math for position
+    vx=vx-dt*k*vx*sqrt(vx^2+vy^2);
+    vy=vy-dt*(k*vy*sqrt(vx^2+vy^2)+g);
+    x=x+vx*dt;
+    y=y+vy*dt;
+    
+    plot(x,y,"ro")
+
+    % finds ascend time with repeated assignment
+    if (y>ymax)
+    ymax=y;
+    ascendTime=t;
+    end
 
 
+end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% descend time calculation
+descendTime=t-ascendTime;
+
+%%%%%%%%%%%%% ANSWERS %%%%%%%%%%%%%%%%%%%
+% 1) pi/6
+% 2) as launch decreases, time increases
+% 3) parabolic
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Do not modify the code below %%%
 
 hold off
