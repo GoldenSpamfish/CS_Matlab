@@ -1,0 +1,37 @@
+% Simulation of gas molecules
+
+clear all
+close all
+figure
+
+% No. of molecules to include in simulation.
+n= 1;
+% Can change n to 2 or 3 without further changes to this script.
+% To include more than 3 molecules, you need to supply more x and y
+% coordinates.  See the block "Initial positions of molecules" below.
+
+% Box size, molecule radius, number of time steps
+w= 6;            % Width of box
+h= 4;            % Height of box
+r= min(w,h)/40;  % Radius of a molecule
+T= 100;          % Number of time steps in simulation
+
+% Initial positions of molecules
+x= [4 2 5];   % x-positions of the centers of the molecules
+y= [3 1 1];   % y-positions of the centers of the molecules
+% Alternative:  use random initial positions--overlaps are possible
+% x= rand(1,n)*(w-2*r)+r;
+% y= rand(1,n)*(h-2*r)+r;
+
+% Re-calculate n for safety
+n= min([n, length(x), length(y)]);
+% Include only first n molecules in simulation
+x= x(1:n);  
+y= y(1:n); 
+
+% Initial velocities of molecules
+vx= rand(1,n)/10;  % x-component of velocity
+vy= rand(1,n)/10;  % y-component of velocity
+
+title(sprintf('Gas molecules simulation for %d time steps', T))
+[xFinal,yFinal]= inMotion(x,y,vx,vy,r,w,h,T);
