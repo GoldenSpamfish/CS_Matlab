@@ -1,0 +1,20 @@
+function drawTennisCourt(a,b)
+
+close all
+figure
+axis equal off
+hold on
+DrawRectNoBorder(0,0,79.25,35,"w")
+
+DrawRectNoBorder(.25,.25,39.25,4.5, [41/256, 82/256, 39/256])
+DrawRectNoBorder(39.75,.25,39.25,4.5, [41/256, 82/256, 39/256])
+DrawRectNoBorder(39.75,30.25,39.25,4.5, [41/256, 82/256, 39/256])
+DrawRectNoBorder(.25,30.25,39.25,4.5, [41/256, 82/256, 39/256])
+DrawRectNoBorder(.25,5,18,25, [41/256, 82/256, 39/256])
+DrawRectNoBorder(61,5,18,25, [41/256, 82/256, 39/256])
+DrawRectNoBorder(18.5,5,21,12.375, [41/256, 82/256, 39/256])
+DrawRectNoBorder(39.75,17.375,21,12.625, [41/256, 82/256, 39/256])
+DrawRectNoBorder(18.5,17.375,21,12.625, [41/256, 82/256, 39/256])
+DrawRectNoBorder(39.75,5,21,12.375, [41/256, 82/256, 39/256])
+
+hold off
