@@ -32,5 +32,5 @@ while ynew>0
     x= xnew;
     y= ynew;
 end
-
+Yvec(length(Yvec))=0;
 end
