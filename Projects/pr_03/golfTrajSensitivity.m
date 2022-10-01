@@ -15,14 +15,15 @@ legendtext={};
 phiVec=linspace(0.1,pi/2,5);
 
 for i=1:length(phiVec)
-colr=[rand rand rand];
+% colr=[rand rand rand];
 legendText{i} = sprintf('phi=%.2f', phiVec(i)); %#ok<SAGROW> % % See Note 3 below
 
 [a,b]=golfTraj(dt,x,y,v,phiVec(i),k);
-   for j = 1:length(a)
-       pause(.01)
-       plot(a(j),b(j),"-o","Color",colr)
-   end
+plot(a,b,"-o")   
+% for j = 1:length(a)
+%        pause(.01)
+%        plot(a(j),b(j),"-o")
+%    end
 end 
 legend(legendText) % Make a legend using the text in legendText
 
@@ -46,14 +47,15 @@ legendtext={};
 kVec=linspace(0.01,.2,5);
 
 for i=1:length(kVec)
-colr=[rand rand rand];
+% colr=[rand rand rand];
 legendText{i} = sprintf('k=%.2f', kVec(i)); %#ok<SAGROW> % % See Note 3 below
 
 [a,b]=golfTraj(dt,x,y,v,phi,kVec(i));
-   for j = 1:length(a)
-       pause(.01)
-       plot(a(j),b(j),"-o","Color",colr)
-   end
+plot(a,b,"-o")
+%    for j = 1:length(a)
+%        pause(.01)
+% %        plot(a(j),b(j),"-o")
+%    end
 end 
 legend(legendText) % Make a legend using the text in legendText
 

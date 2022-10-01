@@ -40,7 +40,7 @@ while ynew>0 && t<maxTime
     xnew= x + vx*dt;
     ynew= y + vy*dt;
     t= t+dt;
-    plot(xnew,ynew,'bo')
+    plot(xnew,ynew)
     pause(.01)
     % Check for max height
     if check4MaxHeight && ynew<y

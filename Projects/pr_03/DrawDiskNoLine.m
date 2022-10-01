@@ -7,6 +7,6 @@ function DrawDisk(xc,yc,r,c)
 theta = linspace(0,2*pi);
 cosVals = cos(theta);
 sinVals = sin(theta);
-fill(xc+r*cosVals,yc+r*sinVals,c);
+fill(xc+r*cosVals,yc+r*sinVals,c, EdgeColor="none");
 
   
