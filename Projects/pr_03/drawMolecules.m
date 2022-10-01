@@ -4,7 +4,7 @@ function  drawMolecules(x,y,r,w,h)
 % All molecules have radius r.
 % Assume r<w/2, r<h/2, and all the molecules lie completely inside the borders.
 % The first molecule is magenta; all other molecules are blue.
-
+close all
 cla % Clear axes (i.e., remove all drawn objects)
 axis equal manual % Axes have equal scaling and are frozen at current scale
 axis([0 w 0 h]) % Set axes limits: x-axis ranges from 0 to w; y-axis ranges from 0 to h
