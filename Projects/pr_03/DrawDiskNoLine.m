@@ -1,4 +1,4 @@
-function DrawDisk(xc,yc,r,c)
+function DrawDiskNoLine(xc,yc,r,c)
 % Adds a circular disk to the current window.
 % Assumes hold is on.
 % The disk has radius r, center(xc,yc) and
