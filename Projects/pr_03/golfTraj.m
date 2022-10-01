@@ -24,8 +24,8 @@ while ynew>0
     xnew= x + vx*dt;
     ynew= y + vy*dt;
     t= t+dt;
-    Xvec=[Xvec xnew];
-    Yvec=[Yvec ynew];
+    Xvec=[Xvec xnew]; %#ok<AGROW> 
+    Yvec=[Yvec ynew]; %#ok<AGROW> 
     % Updates
     vx= vxnew;
     vy= vynew;
