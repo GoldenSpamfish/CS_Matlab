@@ -1,11 +1,11 @@
 % Simulation of gas molecules
 
-clear
+clear all
 close all
 figure
 
 % No. of molecules to include in simulation.
-n= 24;
+n= 12;
 % Can change n to 2 or 3 without further changes to this script.
 % To include more than 3 molecules, you need to supply more x and y
 % coordinates.  See the block "Initial positions of molecules" below.
