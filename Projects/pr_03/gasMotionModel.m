@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% gasMotionModel
+% Hannah Ceisler / Ryan Ellis
+%
+% Provides values and variables to inMotion.m
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Simulation of gas molecules
 
 clear
@@ -5,7 +13,7 @@ close all
 figure
 
 % No. of molecules to include in simulation.
-n= 24;
+n= 32;
 % Can change n to 2 or 3 without further changes to this script.
 % To include more than 3 molecules, you need to supply more x and y
 % coordinates.  See the block "Initial positions of molecules" below.
@@ -14,7 +22,7 @@ n= 24;
 w= 6;            % Width of box
 h= 4;            % Height of box
 r= min(w,h)/40;  % Radius of a molecule
-T= 10000;          % Number of time steps in simulation
+T= 1000;          % Number of time steps in simulation
 
 % Initial positions of molecules
 %x= [4 2 5];   % x-positions of the centers of the molecules

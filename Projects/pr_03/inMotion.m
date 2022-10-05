@@ -1,3 +1,12 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% inMotion
+% Hannah Ceisler / Ryan Ellis
+%
+% Produces gas particle simulation
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Simulate the motion of molecules in a 2-d space with width w and height h
 % over T time steps. All molecules have radius r.
 % x and y are vectors where (x(k),y(k)) is the position of the kth particle.
@@ -8,32 +17,47 @@
 % xFinal and yFinal store the positions of the molecules after T time steps:
 % (xFinal(k),yFinal(k)) is the final position of the kth particle.
 function [xFinal, yFinal] = inMotion(x,y,vx,vy,r,w,h,T)
-recentCollisions=zeros(length(x),length(y));
+% stores a matrix of particle pairs
+recentCollisions=zeros(length(x),length(y)); 
 
+% number of cycles
 for t=1:T
     drawMolecules(x,y,r,w,h)
-
+    
+    % traverses vectors
     for a = 1:length(x)
         for b = a+1:length(x)
             
-%               SPECIAL BINDING PREVENTION            
-            pre=[vx(a),vy(a),vx(b),vy(b)];
+             % SPECIAL BINDING PREVENTION  ((DOMINIC APPROVED THIS METHOD)) 
+             % Prevents binding by disabling collisions between particle
+             % pairs for a set number of loops
+            pre=[vx(a),vy(a),vx(b),vy(b)]; %saves state of system before impacts
             [vx1,vy1,vx2,vy2]=checkImpact(x(a),y(a),vx(a),vy(a),x(b),y(b),vx(b),vy(b),r);
-            post=[vx1,vy1,vx2,vy2];
+            post=[vx1,vy1,vx2,vy2]; %gets state of system after impacts
             
-            if ~isequal(pre,post) && (recentCollisions(a,b)<=0)
+
+            % checks if there has been an impact since the last loop
+            % and the value of the collision clipping checker has reached 0
+            if ~isequal(pre,post) && (recentCollisions(a,b)<=0) 
                 vx(a)=vx1;
                 vy(a)=vy1;
                 vx(b)=vx2;
                 vy(b)=vy2;
-                recentCollisions(a,b)=recentCollisions(a,b)+1;
-                
+                recentCollisions(a,b)=recentCollisions(a,b)+1; %registers collision
+
+            % If there is no collison, count down the collison disabling
+            % value
             elseif recentCollisions(a,b)>0
-                clippingCycles=length(x);
+                
+                %value representing how many cycles before particles can
+                %interact again
+                clippingCycles=length(x); 
+                
+                %reduces registered value
                 recentCollisions(a,b)=recentCollisions(a,b)-(1/clippingCycles);
             end
 
-%             % DEFAULT
+%              % DEFAULT METHOD
 %             [vx(a),vy(a),vx(b),vy(b)]=checkImpact(x(a),y(a),vx(a),vy(a),x(b),y(b),vx(b),vy(b),r);
 
         end
@@ -41,16 +65,22 @@ for t=1:T
 
     for k=1:length(x)
     % WALL COLLISIONS
+     % checks sides
     if((x(k)-r)<0 || x(k)+r>w)
          vx(k)=-vx(k);
+         
+         % prevents trapping
          if x(k)-r<0
           x(k)=0+r;
          else 
             x(k)=w-r;
          end
     end
+    % checks top and bottom 
     if(y(k)-r<0 || y(k)+r>h)
          vy(k)=-vy(k);
+
+         % prevents trapping
          if y(k)-r<0
           y(k)=0+r;
          else 

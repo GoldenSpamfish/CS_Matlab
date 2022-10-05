@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% drawMolecules
+% Hannah Ceisler / Ryan Ellis
+%
+% Pure Visual element of particle sim
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 function  drawMolecules(x,y,r,w,h)
 % % Draw all molecules with axis limits w (x direction) and h (y direction).
 % x, y are vectors of the same length: (x(k),y(k)) is the position of the kth molecule.
@@ -14,8 +22,11 @@ box on % Draw border
 hold on % Subsequent plot/fill commands appear on current axes
 
 %Drawing Molecules
+
+% color of first
 DrawDiskNoLine (x(1), y(1), r, 'm')
 
+% color of all additional particles
 for i = 2:length(x)
     DrawDiskNoLine(x(i),y(i),r,'b')
 end

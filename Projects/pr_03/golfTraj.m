@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% golfTraj
+% Hannah Ceisler / Ryan Ellis
+%
+% produces a vector of projectile positions
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 function [Xvec,Yvec] = golfTraj(dt,x0,y0,v0,phi,k)
 %Trajectory of golf ball
 Xvec=[];
@@ -15,17 +23,23 @@ vy= v*sin(phi);
 x= x0;
 y= y0;
 t= 0;
+
 % Simulate trajectory until golf ball lands
 ynew= 1;             % initialzed to enter loop
 while ynew>0
+
+    %projectile math
     rootTerm= sqrt(vx^2 + vy^2);
     vxnew= vx - dt*k*vx*rootTerm;
     vynew= vy - dt*(k*vy*rootTerm + g);
     xnew= x + vx*dt;
     ynew= y + vy*dt;
     t= t+dt;
+
+    %grows vector
     Xvec=[Xvec xnew]; %#ok<AGROW> 
     Yvec=[Yvec ynew]; %#ok<AGROW> 
+    
     % Updates
     vx= vxnew;
     vy= vynew;

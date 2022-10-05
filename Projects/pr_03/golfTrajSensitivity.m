@@ -1,3 +1,12 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% golfTrajSensitivity
+% Hannah Ceisler / Ryan Ellis
+%
+% Displays projectile trajectories with varying angle and drag
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 close all % Close all figure windows
 figure % Start a new figure
 set(gcf,'Units','normalized','Position',[.3 .2 .5 .6])
@@ -41,7 +50,7 @@ v= 100;
 x= 0;
 y= 0;
 legendtext={};
-kVec=linspace(0.01,.2,5);
+kVec=linspace(0.01,.2,5); % k values
 
 for i=1:length(kVec)
 legendText{i} = sprintf('k=%.2f', kVec(i)); %#ok<SAGROW> % % See Note 3 below
