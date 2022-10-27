@@ -10,21 +10,48 @@ function outM = oneSweep(inM)
 % A live cell with more than 3 live neighbors dies (overcrowding).
 % A dead cell with exactly 3 live neighbors becomes live (reproduction).
 
-xPos=[-1,0,1,-1,1,-1,0,1];
-yPos=[1,1,1,0,0,-1,-1,1];
+% cordinate offsets for all neighbors
+xPos=[-1,0,1,-1,1,-1, 0,1];
+yPos=[ 1,1,1, 0,0,-1,-1,-1];
+
+% determines size of board
 [xSize,ySize]=size(inM);
+
+% preallocation
+outM=zeros(xSize,ySize);
+
+% traverses board
 for x=1:xSize
     for y=1:ySize
+        % resets living neighbor count
         total=0;
+
+        % traverses neighbor vectors
         for pos=1:length(xPos)
                  try  
-                    total=total+inM(x+xPos(pos),y+yPos(pos))
+                    % tries to add value of neighbors
+                    % if this fails, catches 
+                    total=total+inM(x+xPos(pos),y+yPos(pos));
                  catch
-                    %disp('skill issue')
+                    % if neighboring cell does not exist (edge of frame)
+                    %disp('dominic pls')
                  end
         end
-         if total
-        
+
+        if inM(x,y)==1
+            if total<2
+                 outM(x,y)=0;
+             elseif total==2 || total == 3
+                 outM(x,y)=1;
+            else
+                 outM(x,y)=0;
+             end
+        else
+            if total==3
+                 outM(x,y)=1;
+            end
+        end
+      
     end
 end
 

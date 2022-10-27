@@ -28,36 +28,30 @@ function colr = pixelate(A,lc,rc,tr,br,n)
 %
 % Call DrawRectNoBorder to draw the pixelation on the image. 
 
-lc 
-rc 
-tr 
-br 
-n
-close all
-figure
-hold on
+% Checks if region is large enough to pixelate
 if floor((rc-(lc-1))/n)<5 || floor((br-(tr-1))/n)<5
     error('Use smaller block size (n) or select larger area')
 end
-
-% A(i*n:(i+1)*n j*n:(j+1)*n 1:3);
-
+% trims region to a multiple of n 
 lc=lc-rem((rc-(lc-1)),n);
 br=br-rem((br-(tr-1)),n);
 
-nrb=(rc-(lc-1))/n;
-ncb=(br-(tr-1))/n;
+% determines the number of pixel chunks to average
+ncb=(rc-(lc-1))/n;
+nrb=(br-(tr-1))/n;
 
+%loops through pixel chunks
 for i = 0:nrb-(n)
     for j = 0:ncb-(n)
-         colr(1)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 1),'all');
-         colr(2)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 2),'all');
-         colr(3)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 3),'all');
-%         [lc+(i*n+1),tr+(j*n+1)]
-         DrawRectNoBorder(lc+(i*n),tr+(j*n),n,n,colr(1:3)/255)
+        % sets each channel of the color vector to the average of the chunk 
+        colr(1)=mean(A(i*n+1+tr:(i)*n+n+tr, j*n+1+lc:(j)*n+n+lc, 1),'all');
+        colr(2)=mean(A(i*n+1+tr:(i)*n+n+tr, j*n+1+lc:(j)*n+n+lc, 2),'all');
+        colr(3)=mean(A(i*n+1+tr:(i)*n+n+tr, j*n+1+lc:(j)*n+n+lc, 3),'all');
+        
+        % draws a rectangle over the chunk with the determined color
+        DrawRectNoBorder(lc+(j*n),tr+(i*n),n,n,colr(1:3)/255)
     end
 end
-hold off
 end
 
 

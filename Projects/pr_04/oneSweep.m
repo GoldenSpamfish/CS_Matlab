@@ -10,21 +10,40 @@ function outM = oneSweep(inM)
 % A live cell with more than 3 live neighbors dies (overcrowding).
 % A dead cell with exactly 3 live neighbors becomes live (reproduction).
 
+% cordinate offsets for all neighbors
 xPos=[-1,0,1,-1,1,-1, 0,1];
 yPos=[ 1,1,1, 0,0,-1,-1,-1];
+
+% determines size of board
 [xSize,ySize]=size(inM);
+
+% preallocation
 outM=zeros(xSize,ySize);
+
+% traverses board
 for x=1:xSize
     for y=1:ySize
+        % resets living neighbor count
         total=0;
+
+        % traverses neighbor vectors
         for pos=1:length(xPos)
                  try  
+                    % tries to add value of neighbors
+                    % if neighboring cell does not exist...
                     total=total+inM(x+xPos(pos),y+yPos(pos));
                  catch
+                    % ...catches outOfBounds error and continues
+                    
+                    % optional printout to check for instances when an
+                    % error is caught
+
                     %disp('dominic pls')
                  end
         end
-
+        
+        % if/else to set next turn's board
+        % follows conway's rules based on living neighbor total
         if inM(x,y)==1
             if total<2
                  outM(x,y)=0;

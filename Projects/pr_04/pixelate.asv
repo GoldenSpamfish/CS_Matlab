@@ -28,6 +28,12 @@ function colr = pixelate(A,lc,rc,tr,br,n)
 %
 % Call DrawRectNoBorder to draw the pixelation on the image. 
 
+lc 
+rc 
+tr 
+br 
+n
+
 if floor((rc-(lc-1))/n)<5 || floor((br-(tr-1))/n)<5
     error('Use smaller block size (n) or select larger area')
 end
@@ -40,16 +46,18 @@ br=br-rem((br-(tr-1)),n);
 nrb=(rc-(lc-1))/n;
 ncb=(br-(tr-1))/n;
 
-for i = 0:nrb-(n+1)
-    for j = 0:ncb-(n+1)
-         colr(1)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 1),'all');
-         colr(2)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 2),'all');
-         colr(3)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 3),'all');
-        [lc+(i*n),tr+(j*n)]
-         DrawRectNoBorder(lc+(i*n+n+1),tr+(j*n+n+1),n,n,colr(1:3)/255)
+for i = 0:nrb-(n)
+    for j = 0:ncb-(n)
+          colr(1)=mean(A(i*n+1+lc:(i)*n+n+lc, j*n+1+tr:(j)*n+n+tr, 1),'all');
+          colr(2)=mean(A(i*n+1+lc:(i)*n+n+lc, j*n+1+tr:(j)*n+n+tr, 2),'all');
+          colr(3)=mean(A(i*n+1+lc:(i)*n+n+lc, j*n+1+tr:(j)*n+n+tr, 3),'all');
+%         [lc+(i*n+1),tr+(j*n+1)]
+%          colr(1)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 1),'all');
+%          colr(2)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 2),'all');
+%          colr(3)=mean(A(i*n+1:(i)*n+n, j*n+1:(j)*n+n, 3),'all');
+         DrawRectNoBorder(lc+(j*n),tr+(i*n),n,n,colr(1:3)/255)
     end
 end
-
 end
 
 

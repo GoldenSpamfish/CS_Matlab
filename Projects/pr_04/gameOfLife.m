@@ -7,12 +7,12 @@ figure
 axis equal off
 drawState(m,1)
 drawnow
+
 % Simulate n steps
 for k= 1:n
 pause(0.1) 
 drawState(m,k)
-% During program development, change to pause() so that you
-% can manually advance the simulation and check each step
+
 drawnow % Force MATLAB to complete drawing in the figure window before
 % moving on. Useful in animation (in loop) when the computation
 % gets done faster than drawing on the screen.
