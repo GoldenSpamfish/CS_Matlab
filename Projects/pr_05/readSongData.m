@@ -1,0 +1,26 @@
+function [songData, uRating] = readSongData(inFilename)
+% Read input data file and return the song data and user rating.
+% inFilename is the name of the input data file to be read:
+%   * First line of data file:  the number of artists in the file,
+%     followed by the user rating for this quiz.
+%   * Each remaining line is the data for one musical artist; there
+%     are four data items on each line:  the average time-to-answer (in 
+%     tenths of a second), the rating of the artist, the artist, and a set 
+%     of lyrics from one of the artist's songs.
+%   * Within each line, data items are delimited by tabs.
+% songData is a 2D cell array; its number of rows is the number of artists 
+% in the quiz and its number of columns is 4. Each row stores the  
+% data for one artist in the set of artists included in the file:
+%   * The first column of any particular row stores an artist
+%   * The second column of that row stores a set of lyrics from a song by the artist
+%   * The third column of that row stores the average time-to-answer (in 
+%     tenths of a second)
+%   * The fourth column of that row stores the difficulty rating of the 
+%     artist
+% uRating is the user rating read from line 1 of the data file.
+
+
+% The following two statements are dummy initializations of the return 
+% parameters; replace them with your code.
+songData = {};  
+uRating = 0;     

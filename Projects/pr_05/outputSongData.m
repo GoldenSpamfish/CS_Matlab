@@ -1,0 +1,19 @@
+function outputSongData(songData, sessionStats, outFilename)
+% Write all song data, including the user rating for the data, to file.
+% songData is a 2D cell array where each row stores an artist name, a set 
+% of lyrics by that artist, the average time to answer about that artist, 
+% and the difficulty of finding the lyrics of that artist.
+% sessionStats is the 1x4 cell array containing the statistics of the 
+%   entire session; it is organized as:
+%   {userRating, totalCount, correctCount, history}
+% outFilename names the output data file to be written:
+%   * output data file has the same format and the same number of lines as
+%     the input data file used to start the session.
+%   * First line of data file:  the number of musical artists included,
+%     followed by the user rating for this quiz at the end of the
+%     session.
+%   * Each remaining line is the data for each musical artist.  The estimated time
+%     and rating for each artist reflect the result of the session.
+%   * Within each line, data items are delimited by tabs.
+
+% Write your code below.
