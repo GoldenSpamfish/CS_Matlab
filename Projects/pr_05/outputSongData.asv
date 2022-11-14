@@ -17,11 +17,8 @@ function outputSongData(songData, sessionStats, outFilename)
 %   * Within each line, data items are delimited by tabs.
 
 % Write your code below.
-file=fopen(outFilename,"w");
+file=fopen("outData.txt","w");
 [nr,~]=size(songData);
 
-fprintf(file,'%i \t %i\n',nr,sessionStats{1});
-for i=1:nr
-    fprintf(file,'%i \t %i \t %s \t %s\n',songData{i,3},songData{i,4},songData{i,1},songData{i,2});
-end
-fclose(file);
+fprintf(file,'%f %f',nr,sessionStats{1});
+fprintf(file,'%f %f %s %s',);

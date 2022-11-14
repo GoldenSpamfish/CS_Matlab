@@ -26,8 +26,7 @@ function [songData, uRating] = readSongData(inFilename)
 
 file=fopen(inFilename,'r');
 line=fgetl(file);
-info = textscan(line,'%f %f','Delimiter','\t');
-uRating = info {1};
+uRating = textscan(line,'%f %f %s %s','Delimiter','\t'); 
 i=1;
 while ~feof(file)
     line=fgetl(file);
@@ -41,4 +40,4 @@ while ~feof(file)
     i=i+1;
 %     songData=cellstr2str(songData); info
 end  
-fclose(file);
+ 

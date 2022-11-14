@@ -22,16 +22,24 @@ function [songData, sessionStats]=updateData(songData, sessionStats, ...
 % *** Write your code below to perform the following tasks: ***
 % (1) Calculate new user rating and artist rating--call subfunction
 %     computeRating.
+
+newrate = computeRating(sessionStats{1},songData{artistIdx,3},isCorrect,timeTaken,songData{artistIdx,4},baseKvalue);
 % (2) Calculate new average time user takes to identify the artist with index
 %     artistIdx.
+newav = round(timeTaken *0.7 + songData{artistIdx,4} *0.3);
 % (3) Update songData and sessionStats.
 % The following two statements are dummy initializations of the return 
 % parameters; replace them with your code.
-songData = songData;
-sessionStats = sessionStats;
-
-
-
+songData{artistIdx,4} = newav;
+sessionStats{1} = newrate;
+if isCorrect
+    sessionStats{3} = sessionStats{3} +1;
+end
+sessionStats{2} = sessionStats{2}+1;
+for j = 1:14
+    sessionStats{4}(j) = sessionStats{4}(j+1);
+end
+sessionStats{4}(15) = artistIdx;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DO NOT MODIFY the following subfunction.

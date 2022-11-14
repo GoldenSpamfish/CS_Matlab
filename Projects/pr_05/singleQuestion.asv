@@ -48,11 +48,9 @@ lyric = songData{quest,2};
 fprintf('Which of the following lyrics are by "%s"?\n',artist)
 lyrics=strings(21,5);
 for i=1:5
+    while ~(any()
     newlyr=songData{randi(len),2};
-    while (any(lyrics(:)==newlyr))
-        newlyr=songData{randi(len),2};
-    end
-lyrics(i)=newlyr;
+lyrics(i)=songData{randi(len),2};
 end
 correct=randi(5);
 lyrics(correct)=lyric;

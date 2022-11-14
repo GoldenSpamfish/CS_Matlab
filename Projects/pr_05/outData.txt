@@ -1,0 +1,146 @@
+145 	 316
+200 	 1000 	 Mariah Carey   	 All I want for Christmas is you
+200 	 117 	 Bad Bunny   	 Ella es callaita
+200 	 1000 	 Carly Rae Jepsen   	 But you know what, I'm coming back for you baby, I'm coming back for you
+200 	 1000 	 Lizzo   	 In a minute imma need a sentimental man or woman to pump me up
+200 	 1000 	 Nicki Minaj   	 Starships are meant to fly
+200 	 1000 	 Michael Jackson   	 Cause this is thriller
+200 	 1000 	 Justin Bieber   	 And I was like baby, baby, baby oh
+200 	 398 	 Beyonce   	 Who run the world? Girls.
+200 	 1000 	 Olivia Rodrigo   	 It's brutal out here
+200 	 1000 	 Bel Biv Devoe   	 Poison!
+200 	 1000 	 Billie Eilish   	 I'm the bad guy, duh
+200 	 1000 	 Backstreet Boys   	 You are my fire
+200 	 336 	 Miley Cyrus   	 I came in like a wrecking ball
+200 	 1000 	 Jennifer Lopez   	 I'm still Jenny from the block
+200 	 1000 	 Shakira   	 My hips don't lie
+200 	 319 	 Katy Perry   	 Do you ever feel like a plastic bag
+200 	 335 	 Gwen Stefani   	 I ain't no hollaback girl
+200 	 316 	 Britney Spears   	 Oops I did it again
+200 	 1000 	 Ariana Grande   	 I see it, I like it, I want it, I got it
+200 	 1000 	 Rihanna   	 We found love in a hopeless place
+200 	 165 	 Dua Lipa   	 Don't show up, don't come out. Don't start caring about me now
+200 	 373 	 Lady Gaga   	 Rocket #9 take off to the planet, to the planet, VENUS
+200 	 1000 	 The Beatles   	 All you need is love
+200 	 1000 	 Madonna   	 'cause we are living in a material world and I am a material girl
+200 	 1000 	 Celine Dion   	 Near, far, wherever you are I believe that the heart does go on
+200 	 1000 	 Whitney Houston   	 And I will always love you
+200 	 317 	 Calvin Harris   	 When I met you in the summer
+200 	 1000 	 BTS   	 So imma light it up like dynamite
+200 	 1000 	 Taylor Swift   	 Karma is my boyfriend
+200 	 1000 	 Adele   	 Hello from the other side
+200 	 1000 	 Kesha   	 Wake up in the morning feel like P-diddy
+200 	 1000 	 Drake   	 You only live once it's the motto
+200 	 1000 	 The Weeknd   	 I'm blinded by the lights
+200 	 316 	 One Direction   	 You don't know you're beautiful
+200 	 326 	 Harry Styles   	 Watermelon sugar high
+200 	 1000 	 Kanye West   	 She don't believe in shootin stars but she believes in shoes and cars
+200 	 1000 	 Black Eyed Peas   	 Meet me halfway right at the borderline that's where I'm gonna wait for you
+200 	 1000 	 Cher   	 Do you believe in life after love?
+200 	 1000 	 Bruno Mars   	 And when you smile, the whole world stops and stares for a while
+200 	 313 	 Eminem   	 There's vomit on his sweater already, mom's spaghetti
+200 	 1000 	 Jason Derulo   	 Jason Derulo
+200 	 1000 	 Demi Lovato   	 We're cool for the summer
+200 	 1000 	 Red Hot Chili Peppers   	 With a name like Dani California
+200 	 1000 	 Selena Gomez   	 I love you like a love song baby
+200 	 1000 	 Pussycat Dolls   	 When I grow up I wanna be famous I wanna be a star
+200 	 1000 	 Fergie   	 I'm fergalicious
+200 	 1000 	 Prince   	 I only want to see you laughing in the purple rain
+200 	 1000 	 Ciara   	 Let me see you one, two step
+200 	 352 	 Paramore   	 I'm in the business of misery
+200 	 1000 	 Pitbull   	 Dale
+200 	 1000 	 Sam Smith   	 Oh won't you stay with me
+200 	 1000 	 The killers   	 Cause I'm Mr. Brightside
+200 	 1000 	 Simon & Garfunkel   	 Hello darkness my old friend
+200 	 1000 	 ABBA   	 Gimme gimme gimme a man after midnight
+200 	 1000 	 Aqua   	 I'm a barbie girl in a barbie world
+200 	 1000 	 Journey   	 Don't stop believing
+200 	 113 	 Spice Girls   	 If you wanna be my lover, you gotta get with my friends
+200 	 1000 	 Aretha Franklin   	 R-E-S-P-E-C-T find out what it means to me
+200 	 1000 	 Ricky Martin   	 Livin' la vida loca
+200 	 1000 	 Gotye   	 Now you're just somebody that I used to know
+200 	 315 	 Elvis   	 I can't help falling in love with you
+200 	 1000 	 Rosalia   	 Yo no soy y ni voy a ser tu bizcochito
+200 	 315 	 Queen   	 We will we will rock you
+200 	 1000 	 Neil Diamond   	 Sweet Caroline
+200 	 301 	 Simple Plan   	 I'm just a kid and life is a nightmare
+200 	 1000 	 Lil Nas X   	 I'm gonna take my horse to the old town road
+200 	 1000 	 Nick Jonas   	 I still get jealous
+200 	 301 	 Nelly Furtado   	 Promiscuous boy, you're teasing me
+200 	 1000 	 Rascal Flats   	 Life is a highway
+200 	 1000 	 Gavin Degraw   	 I don't want to be anything other than what I've been trying to be lately
+200 	 1000 	 Fall Out Boy   	 We're going down, down in an earlier round
+200 	 1000 	 Sean Kingston   	 You're way too beautiful, girl
+200 	 1000 	 My Chemical Romance   	 When I was a young boy my father took me into the city
+200 	 1000 	 DNCE   	 Keep on hoping we'll eat cake by the ocean
+200 	 1000 	 Camilla Cabello   	 Half of my heart is in Havana
+200 	 320 	 Amy Winehouse   	 They try to make me go to rehab I said, no, no, no
+200 	 324 	 Lorde   	 And we'll never be royals
+200 	 1000 	 Smash Mouth   	 Somebody once told me the world is gonna roll me
+200 	 310 	 Simon & Garfunkel   	 Hello darkness, my old friend
+200 	 1000 	 Fifth Harmony   	 You don't gotta go to work, work, work, work
+200 	 1000 	 BLACKPINK   	 This that pink venom
+200 	 1000 	 Charli XCX   	 I don't wanna go to school I just wanna break the rules
+200 	 320 	 Charlie Puth   	 And I'll tell you all about it when I see you again
+200 	 1000 	 Tracy Chapman   	 I got a fast car I got a ticket to anywhere
+200 	 1000 	 Jonas Brothers   	 I'm burning up, burning up for you baby
+200 	 326 	 Rauw Alejandro   	 Es que me gusta todo de ti
+200 	 1000 	 Sia   	 I'm gonna swing from the chandelier
+200 	 1000 	 Post Malone   	 Now they always say congratulations
+200 	 1000 	 Kelly clarkson   	 What doesn't kill you makes you stronger
+200 	 327 	 Halsey   	 I'm bad at love
+200 	 301 	 Elton John   	 And I think it's gonna be a long, long time
+200 	 377 	 Kim Petras   	 There will be blood!
+200 	 1000 	 The Animals   	 There is a house in New Orleans
+200 	 313 	 Bonnie Tyler   	 A total eclipse of the heart
+200 	 318 	 Foster The People   	 All the other kids with the pumped up kicks
+200 	 1000 	 Fun   	 Tonight we are young
+200 	 334 	 Fleetwood Mac   	 Thunder only happens when it's raining
+200 	 336 	 Lauv   	 I'm so tired of love songs
+200 	 1000 	 Avenged Sevenfold   	 Hail to the kind, hail to the one, kneel to the crown
+200 	 1000 	 Grimes   	 I never walk about after dark it's my point of view
+200 	 325 	 Green Day   	 Wake me up when September ends
+200 	 1000 	 Gloria Gaynor   	 I will survive, hey, hey
+200 	 1000 	 Cindy Lauper   	 Oh girls, they wanna have fun
+200 	 1000 	 *NSYNC   	 Bye bye bye
+200 	 1000 	 Florence + The Machine   	 The dog days are over
+200 	 366 	 Lou Bega   	 Ladies and gentlemen, this is Mambo No. 5!
+200 	 1000 	 Jessie J   	 It's not about the money money money
+200 	 353 	 Kylie Minogue   	 I just can't get you out of my head
+200 	 1000 	 Outkast   	 Shake it like a Polaroid picture, hey ya!
+200 	 156 	 No Doubt   	 Don't speak, I know just what you're thinking
+200 	 85 	 One Republic   	 I said it's too late to apologize, it's too late
+200 	 1000 	 Jesse McCartney   	 Why don't you tell him that I'm leavin' never looking back again
+200 	 1000 	 Leona Lewis   	 Keep bleeding, keep, keep bleeding love
+200 	 335 	 Boyz II Men   	 It's so hard to say goodbye to yesterday
+200 	 1000 	 Macklemore   	 No, for real, ask you grandpa, can I have his hand-me-downs?
+200 	 1000 	 TLC   	 No, I don't want no scrub
+200 	 1000 	 Alicia Keys    	 In New York, concrete jungle where dreams are made of
+200 	 1000 	 Nickleback   	 Hey, hey, I wanna be a rockstar
+200 	 336 	 The Chainsmokers   	 Let me take a selfie
+200 	 1000 	 Dolly Parton   	 Jolene, Jolene, Jolene, Jolene
+200 	 1000 	 Lana Del Rey   	 Will you still love me when I'm no longer young and beautiful?
+200 	 1000 	 P!nk   	 So what? I'm still a rock star
+200 	 319 	 Justin Timberlake   	 It's like you're my mirror
+200 	 1000 	 Coldplay   	 I was just guessing at numbers and figures
+200 	 1000 	 Snow Patrol   	 Let's waste time chasing cars
+200 	 301 	 Ed Sheeran   	 I'm in love with the shape of you
+200 	 1000 	 John Legend   	 'Cause I give you all of me and you give me all of you
+200 	 1000 	 Avril Lavigne   	 Why'd you have to go and make things so complicated?
+200 	 1000 	 Morgan Wallen   	 I don't want to think about her or wear a ring without her
+200 	 1000 	 Florida Georgia Line   	 If it's meant to be, it'll be, it'll be
+200 	 1000 	 Cardi B   	 I like those Balenciagas, the ones that look like socks
+200 	 1000 	 Shawn Mendes   	 And now that I'm without your kisses, I'll be needing stitches
+200 	 1000 	 John Lennon   	 Imagine all the people... living life in peace
+200 	 1000 	 Aretha Franklin   	 R-E-S-P-E-C-T
+200 	 1000 	 Marvin Gaye   	 Ain't no mountain high enough, ain't no valley low enough
+200 	 1000 	 The Weather Girls   	 It's raining men! Hallelujah!
+200 	 1000 	 MC Hammer    	 Can't touch this
+200 	 1000 	 Survivor   	 It's the eye of the tiger
+200 	 1000 	 The Pointer Sisters   	 I'm so excited and I just can't hide it!
+200 	 1000 	 The Temptations   	 Talkin' 'bout my girl, my girl!
+200 	 1000 	 Louis Armstrong   	 And I think to myself... what a wonderful world!
+200 	 1000 	 Village People   	 Macho, macho man
+200 	 1000 	 Bradley Cooper   	 Tell me something, girl. Are you happy in this modern world?
+200 	 301 	 Pharrell Williams   	 Clap along if you feel like a room without a roof
+200 	 390 	 Diana Ross   	 I'm coming out! I want the world to know
