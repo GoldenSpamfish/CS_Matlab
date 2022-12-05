@@ -62,7 +62,7 @@ classdef Schedule < handle
                 canFit=false;
                 for i = 1:length(self.eventArray)
                     
-                    event=self.eventArray{i}(1)
+                    event=self.eventArray{i}(1);
 %                     event=event{1};
                     if event.scheduledTime==-1
                         if event.available.isIn(remWin)
@@ -76,7 +76,7 @@ classdef Schedule < handle
                             earliestEvent=event;
                             earliestIndex=i;
                         elseif event.earliestTime(remWin)==earliest
-                            if event.importance>earliestEvent.importance
+                            if (event.importance/event.duration)>(earliestEvent.importance/earliestEvent.duration)
                                 earliestEvent=event;
                                 earliestIndex=i;
                             end
