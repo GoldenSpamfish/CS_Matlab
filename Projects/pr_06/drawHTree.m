@@ -6,9 +6,19 @@ hold on
 if level==0
 %%
 else
-    plot([x-(len/2) x+(len/2)], [y y], 'Color', 'c', 'Linewidth', w)
-    plot([x+(len/2) x+(len/2)], [y-(len/2) y+(len/2)], 'Color', 'c', 'Linewidth', w)
-    plot([x-(len/2) x-(len/2)], [y-(len/2) y+(len/2)], 'Color', 'c', 'Linewidth', w)
+    charA = 'krymg';
+    num = ceil(rand*10);
+    if num == 5
+        num2 = ceil(rand*5);
+        i = charA(num2);
+    else
+        i = 'b';
+
+    end
+
+    plot([x-(len/2) x+(len/2)], [y y], 'Color', i, 'Linewidth', w)
+    plot([x+(len/2) x+(len/2)], [y-(len/2) y+(len/2)], 'Color', i, 'Linewidth', w)
+    plot([x-(len/2) x-(len/2)], [y-(len/2) y+(len/2)], 'Color', i, 'Linewidth', w)
     
     level=level-1;
     len=len/2;
