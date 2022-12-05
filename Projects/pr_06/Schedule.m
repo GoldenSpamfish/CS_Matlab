@@ -61,16 +61,16 @@ classdef Schedule < handle
             while canFit
                 canFit=false;
                 for i = 1:length(self.eventArray)
-                    
+                    self.eventArray
                     event=self.eventArray{i}(1);
-%                     event=event{1};
                     if event.scheduledTime==-1
                         if event.available.isIn(remWin)
                             canFit=true;
+                        elseif remWin.isIn(event.available)
+                            canFit=true;
                         end
-%                         remWin
-%                         event
-%                         disp("hjgqsdh jgfg " + event.earliestTime(remWin))
+                         event.available
+                         disp("earliest time remwin; " + event.earliestTime(remWin))
                         if event.earliestTime(remWin)<earliest
                             earliest=event.earliestTime(remWin);
                             earliestEvent=event;
@@ -80,14 +80,13 @@ classdef Schedule < handle
                                 earliestEvent=event;
                                 earliestIndex=i;
                             end
+                        else
                         end
                     end
                 end
-%                 disp("HEREEEEEEEEEEEEEEEEE" + self.eventArray{earliestIndex}(1).scheduledTime)
-                self.eventArray{earliestIndex}(1).scheduledTime=earliest;
-%                 disp("HEREEEEEEEEEEEEEEEEE again" + self.eventArray{earliestIndex}(1).scheduledTime)
-
-                remWin=Interval((earliestEvent.earliestTime(remWin) + earliestEvent.duration), remWin.right);
+                 self.eventArray{earliestIndex}(1).scheduledTime=earliest;
+                remWin=Interval((earliestEvent.earliestTime(remWin) + earliestEvent.duration), remWin.right)
+                %%%%%%%%%%%%%%%%%%%%%%%%%
                 earliest=Inf;
             end
             extras={};

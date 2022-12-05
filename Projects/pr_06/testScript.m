@@ -75,20 +75,23 @@ w= a2.getWidth();    % Should be 4, the width of the Interval referenced by a2
 % s.draw() % Should see colored box with left edge at x=21
 
 
-% Test class Course
-c1= Course(8, 25, 6, 0.5, 6, 'CS1000')
-figure; hold on
-c1.draw() % Should see white box with x range of 8 to 25
-c1.setScheduledTime(9)
-hold off
-figure; hold on
-c1.draw() % Should see colored box with left edge at x=9 and
-% the course name in the middle
-hold off
-s.addEvent(c1)
-disp(s.eventArray) % Should see that the last cell references a Course,
-% not an Event
-
-%Test createSchedule
-% createSchedule('eventdata1.txt',0,100)
+% % Test class Course
+% c1= Course(8, 25, 6, 0.5, 6, 'CS1000')
+% figure; hold on
+% c1.draw() % Should see white box with x range of 8 to 25
+% c1.setScheduledTime(9)
+% hold off
+% figure; hold on
+% c1.draw() % Should see colored box with left edge at x=9 and
+% % the course name in the middle
+% hold off
+% s.addEvent(c1)
+% disp(s.eventArray) % Should see that the last cell references a Course,
+% % not an Event
+% 
+% %Test createSchedule
+% % createSchedule('eventdata1.txt',0,100)
  createSchedule('eventdata2.txt',0,100)
+%  interval1=Interval(2,10)
+%  interval2=Interval(0,10)
+%  interval1.isIn(interval2)

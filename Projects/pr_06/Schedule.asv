@@ -61,33 +61,32 @@ classdef Schedule < handle
             while canFit
                 canFit=false;
                 for i = 1:length(self.eventArray)
-                    
-                    event=self.eventArray{i}(1)
-%                     event=event{1};
+                    self.eventArray
+                    event=self.eventArray{i}(1);
                     if event.scheduledTime==-1
                         if event.available.isIn(remWin)
                             canFit=true;
+                        elseif remWin.isIn(event.available)
+                            canFit=true;
                         end
-%                         remWin
-%                         event
-%                         disp("hjgqsdh jgfg " + event.earliestTime(remWin))
+                         event.available
+                         disp("earliest time remwin; " + event.earliestTime(remWin))
                         if event.earliestTime(remWin)<earliest
                             earliest=event.earliestTime(remWin);
                             earliestEvent=event;
                             earliestIndex=i;
                         elseif event.earliestTime(remWin)==earliest
-                            if event.importance>earliestEvent.importance
+                            if (event.importance/event.duration)>(earliestEvent.importance/earliestEvent.duration)
                                 earliestEvent=event;
                                 earliestIndex=i;
                             end
+                        else
                         end
                     end
                 end
-%                 disp("HEREEEEEEEEEEEEEEEEE" + self.eventArray{earliestIndex}(1).scheduledTime)
-                self.eventArray{earliestIndex}(1).scheduledTime=earliest;
-%                 disp("HEREEEEEEEEEEEEEEEEE again" + self.eventArray{earliestIndex}(1).scheduledTime)
-
-                remWin=Interval((earliestEvent.earliestTime(remWin) + earliestEvent.duration), remWin.right);
+                 self.eventArray{earliestIndex}(1).scheduledTime=earliest;
+                remWin=Interval((earliestEvent.earliestTime(remWin) + earliestEvent.duration), remWin.right)
+                %%%%%%%%%%%%%%%%%%%%%%%%%
                 earliest=Inf;
             end
             extras={};
@@ -124,7 +123,8 @@ classdef Schedule < handle
                     end
                 end               
             end
-            
+            xlabel('Time')
+            ylabel('ID')
             set(gca, 'ytick', minId:maxId)
             axis([self.window.left self.window.right minId-1 maxId+1])
             hold off

@@ -105,11 +105,11 @@ classdef Event < handle
             otherColor= [1 0 1];   %magenta
 
             %%%% Write your code below %%%%
-            availXCords=[self.available.left,self.available.left,self.available.right,self.available.right,self.available.left]
-            YCords=[self.id+.25,self.id-.25,self.id-.25,self.id+.25,self.id+.25]
+            availXCords=[self.available.left,self.available.left,self.available.right,self.available.right,self.available.left];
+            YCords=[self.id+.25,self.id-.25,self.id-.25,self.id+.25,self.id+.25];
             plot(availXCords,YCords,"-k")
 
-            eventXCords=[self.scheduledTime,self.scheduledTime,self.scheduledTime+self.duration,self.scheduledTime+self.duration,self.scheduledTime]
+            eventXCords=[self.scheduledTime,self.scheduledTime,self.scheduledTime+self.duration,self.scheduledTime+self.duration,self.scheduledTime];
             
              if self.scheduledTime~=-1 
                 fill(eventXCords,YCords,[1-self.importance,self.importance,1])
