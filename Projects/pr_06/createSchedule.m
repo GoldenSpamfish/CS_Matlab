@@ -20,11 +20,19 @@ s = Schedule(scheduleStart, scheduleFinish, 'My Schedule');
 
 % Read data from file and add the Event (or Course) to s.eventArray
 %%%% Write your code below %%%%
+
 k=0;
+
+% File traversal
+% This would be done better with the csvread built in
 while~feof(eventDataFile)
     k=k+1;
+
+    % splits file into lines and then comma sep values
     line = fgetl(eventDataFile);
-    lineSplit=strsplit(line,",");
+    lineSplit=strsplit(line,","); 
+
+    % uses event or course class based on file
     if lineSplit{1}=='e'
         event=Event(str2double(lineSplit{3}),str2double(lineSplit{4}),str2double(lineSplit{5}),str2double(lineSplit{6}),str2double(lineSplit{2}));
         s.addEvent(event)

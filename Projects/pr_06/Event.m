@@ -50,15 +50,21 @@ classdef Event < handle
 
             %%%% Write your code below %%%%
             
+            % determines overlap between available and input
             lapOver=self.available.overlap(possibleInterval);
             
             if isempty(lapOver)
+                % No-overlap case
                 t=Inf;
             else
                 overWidth=lapOver.getWidth;
+  
+                % if event can fit
                 if overWidth>=self.duration
+                    % return min start time
                     t=lapOver.left;
                 else
+                    % Not enough time
                     t=Inf;
                 end
 
@@ -76,6 +82,7 @@ classdef Event < handle
         function unschedule(self)
         % Unschedules self (set scheduledTime to -1)
             %%%% Write your code below %%%%
+            % Unscheduled events has a beginning time of -1 by convention
         self.scheduledTime=-1;
         end
         
@@ -105,13 +112,21 @@ classdef Event < handle
             otherColor= [1 0 1];   %magenta
 
             %%%% Write your code below %%%%
+            % xcords for white box
             availXCords=[self.available.left,self.available.left,self.available.right,self.available.right,self.available.left];
+            
+            % ycords
             YCords=[self.id+.25,self.id-.25,self.id-.25,self.id+.25,self.id+.25];
+            
+            % draw white box
             plot(availXCords,YCords,"-k")
 
-            eventXCords=[self.scheduledTime,self.scheduledTime,self.scheduledTime+self.duration,self.scheduledTime+self.duration,self.scheduledTime];
-            
+           
+            % draws the event if scheduled 
              if self.scheduledTime~=-1 
+                % scheduled event box cords
+                eventXCords=[self.scheduledTime,self.scheduledTime,self.scheduledTime+self.duration,self.scheduledTime+self.duration,self.scheduledTime];
+                
                 fill(eventXCords,YCords,[1-self.importance,self.importance,1])
              end
            

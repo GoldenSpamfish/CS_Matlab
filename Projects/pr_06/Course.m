@@ -10,6 +10,8 @@ classdef Course < Event
                             id, name)
             % Construct course c. The inherited properties are set by
             % calling Event's contructor.  c.courseName is set to name.
+
+            % always used given proper syntax
             if (nargin<5)
                openTime= 0;
                closeTime= 0;
@@ -18,6 +20,8 @@ classdef Course < Event
                id= -1;
             end
             c = c@Event(openTime, closeTime, duration, importance, id);
+
+            % only used when course name is given
             if (nargin == 6)
                 c.courseName = name;
             end
@@ -36,7 +40,11 @@ classdef Course < Event
         % it's scheduled.
         
             %%%% Write your code below %%%%
+            
+            % uses parent's draw method
             draw@Event(self)
+
+            % in additon, adds course name label
             if(self.scheduledTime~=-1)
                 text(self.scheduledTime+self.duration/2, ... 
                 getId(self),self.courseName,'HorizontalAlignment','center')

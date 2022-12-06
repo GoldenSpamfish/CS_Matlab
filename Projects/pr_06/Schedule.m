@@ -15,9 +15,15 @@ classdef Schedule < handle
         % s.sname is the string name that is shown on the schedule.
         % s.eventArray starts as an empty cell array.
             %%%% Write your code below %%%%
+
+            % CONSTRUCTOR
+
+            % Unamed Schedule
             if nargin>=2
                 s.window=Interval(startTime,endTime);
             end
+
+            % Named Schedule
             if nargin==3
                 s.sname=scheduleName;
             end
@@ -28,7 +34,6 @@ classdef Schedule < handle
         % Adds Event ev to the end of self.eventArray
             %%%% Write your code below %%%%
             self.eventArray{length(self.eventArray)+1}=ev;
-
         end
         
         function extras = scheduleEvents(self)
@@ -50,45 +55,68 @@ classdef Schedule < handle
         % is the empty cell array {}.
             
             %%%% Write your code below %%%%
+
+            % Unschedule all events
             for event = self.eventArray
                 event{1}.unschedule
             end
-            remWin=Interval(self.window.left,self.window.right);
 
+            % set up vars before while 
+            remWin=Interval(self.window.left,self.window.right);
             earliest=Inf;
             earliestEvent=self.eventArray{1};
             canFit=true;
+
+            % while there are events that can be scheduled
             while canFit
+                % start as false
                 canFit=false;
+
+                % traverse event array
                 for i = 1:length(self.eventArray)
-                    self.eventArray
+                    
+                    % pulls event from cell array
                     event=self.eventArray{i}(1);
+
+                    % if unscheduled
                     if event.scheduledTime==-1
+
+                        % if more events can fit
                         if event.available.isIn(remWin)
                             canFit=true;
                         elseif remWin.isIn(event.available)
                             canFit=true;
                         end
-                         event.available
-                         disp("earliest time remwin; " + event.earliestTime(remWin))
+
+                        % if the event is the earliest in this iteration
                         if event.earliestTime(remWin)<earliest
+                            % updates vars accordingly
                             earliest=event.earliestTime(remWin);
                             earliestEvent=event;
                             earliestIndex=i;
+
+                            % if the event is the same time as the earliest
                         elseif event.earliestTime(remWin)==earliest
+                            % if it is higher priority
                             if (event.importance/event.duration)>(earliestEvent.importance/earliestEvent.duration)
+                                % makes it the earliest event
                                 earliestEvent=event;
                                 earliestIndex=i;
                             end
-                        else
                         end
                     end
                 end
-                 self.eventArray{earliestIndex}(1).scheduledTime=earliest;
-                remWin=Interval((earliestEvent.earliestTime(remWin) + earliestEvent.duration), remWin.right)
-                %%%%%%%%%%%%%%%%%%%%%%%%%
+                
+                % Schedules new event
+                self.eventArray{earliestIndex}(1).scheduledTime=earliest;
+                % Updates unreserved interval
+                remWin=Interval((earliestEvent.earliestTime(remWin) + earliestEvent.duration), remWin.right);
+                
+                % resets earliest
                 earliest=Inf;
             end
+
+            % returns extras after while loop complete
             extras={};
             for event=self.eventArray
                 if event{1}.scheduledTime==-1
@@ -107,13 +135,18 @@ classdef Schedule < handle
         % x-direction and only the range of event ids in the y-direction.
 
             %%%% Write your code below %%%%
+            % sets up figure
             figure('units','normalized','outerposition',[0 .05 1 .95], 'name', 'Schedule')
             hold on
             minId = Inf;
             maxId = -Inf;
+
+            % draws all events
             for event = self.eventArray
                 event{1}.draw
                 Id = event{1}.getId;
+
+                %  Determines ID range
                 if Id ~= -1
                     if Id < minId
                         minId = Id;
@@ -123,6 +156,8 @@ classdef Schedule < handle
                     end
                 end               
             end
+
+            % sets up axes
             xlabel('Time')
             ylabel('ID')
             set(gca, 'ytick', minId:maxId)
